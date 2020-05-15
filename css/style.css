@@ -518,7 +518,7 @@ body {
 	
 	#member-div {max-width: 375px; margin: auto;}
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
-	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.8em;}
+	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.2em;}
 	#member-div #one-member .info {font-size: 16px; text-align: justify;}
 }
 /*iphone 6, Galaxy S5*/
@@ -534,7 +534,7 @@ body {
 	#grid-wrapper div .text {line-height: 1.2;font-size: 14px;text-align: justify;padding: 0 2px 2px 2px;font-family: serif;}
 	#member-div {max-width: 360px;margin: auto;}
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
-	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.8em;}
+	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.2em;}
 	#member-div #one-member .info {font-size: 16px;	text-align: justify;}
 }
 
