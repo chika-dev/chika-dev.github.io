@@ -131,15 +131,7 @@ body {
 	.topnav.responsive .dropdown .dropbtn {display: block;width: 100%;text-align: left;}
 }
 
-@media screen and (min-width: 201px) and (max-width:450px) {
-	#top-content .textbox .top, #page-title {
-	  font-size: 15px;
-	}
-	#top-content .textbox .bottom {
-	  font-size: 0.8em;
-	}
-}
-  
+ 
 #top-content {
 	display: grid;
 	margin: auto;
@@ -179,6 +171,14 @@ body {
 }
 #top-content .textbox .bottom {
 	text-align: center;
+}
+@media screen and (min-width: 201px) and (max-width:450px) {
+	#top-content .textbox .top {
+	  font-size: 15px;
+	}
+	#top-content .textbox .bottom {
+	  font-size: 0.8em;
+	}
 }
 @media screen and (min-width: 451px) and (max-width:520px) {
 	#top-content .textbox .top {font-size: 18px;}
@@ -356,37 +356,34 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-content: space-between;
-	
 }
-
 #member-div #one-member .person {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
 }
-
 #member-div #one-member .person .profile-photo {
 	width: 180px;
 	height: 140px;
 	object-fit: cover;
 	border-radius: 8px;
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
 }
 #member-div #one-member .person .name {
-	text-align: center;
+	text-align: left;
 	align-self: center;
-	line-height: 1.5;
+	line-height: 1.2;
 	justify-content: center;
 	font-size: 2.5em;
 	font-family: var(--my-font);
+	padding-left: 6px;
 }
-#member-div #one-member .person .info {
+#member-div #one-member .info {
 	width: 100%;
 	font-family: var(--my-font);
 	padding: 6px 6px;
-	
+	font-size: 20px;
+	text-align: justify;	
 }
 
 
@@ -469,51 +466,77 @@ body {
 	}
 
 /*media screen */
+
+/*ipad*/
+@media only screen and (max-width:768px) {
+	#top-content .textbox .top {font-size: 3.2vmax;}
+	#top-content .textbox .bottom {font-size: 12px;}
+
+	#page-title {font-weight: 350;font-size: 2em;}
+
+	#grid-wrapper {max-width: 768px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
+	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
+	.box-text-left{font-weight: 200px;font-size: 1.2em;}
+	.box-text-right{font-weight: 200px;	font-size: 1.2em;}
+	#grid-wrapper div .text {line-height: 1.2; font-size: 14px; text-align: justify; padding: 0 2px 2px 2px; font-family: serif;}
+	
+	#member-div {max-width: 768px;margin: auto;}
+	#member-div #one-member .person .profile-photo {width: 180px;height: 140px;border-radius: 8px;}
+	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 2em;}
+	#member-div #one-member .info {font-size: 18px;text-align: justify;}
+}
+/*iphone 6/7/8 plus, Pixel 2*/
+@media only screen and (max-width:414px) {
+	#top-content .textbox .top {font-size: 17px;}
+	#top-content .textbox .bottom {font-size: 12px;}
+	
+	#page-title {font-weight: 350;font-size: 1.5em;}
+
+	#grid-wrapper {max-width: 414px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
+	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
+	.box-text-left{font-weight: 200px;font-size: 1.2em;}
+	.box-text-right{font-weight: 200px;font-size: 1.2em;}
+	#grid-wrapper div .text {line-height: 1.2;font-size: 14px;text-align: justify;padding: 0 2px 2px 2px;font-family: serif;}
+	
+	#member-div {max-width: 414px;margin: auto;}
+	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
+	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.8em;}
+	#member-div #one-member .info {font-size: 18px;	text-align: justify;}
+}
 /*iphone x*/
 @media only screen and (max-width:375px) {
+	#top-content .textbox .top {font-size: 15px;}
+	#top-content .textbox .bottom {font-size: 10px;}
+
 	#page-title {font-weight: 350;font-size: 1.5em;}
+
 	#grid-wrapper {max-width: 375px;max-height: 600px;margin: auto;grid-template-columns: 4fr 4fr 4fr; grid-template-rows: 50px 150px 150px 150px;}
 	#grid-wrapper .topbox {height: 40px; line-height: 1;font-size: 2.5em;font-weight: 350px;}
 	.box-text-left{font-weight: 200px; font-size: 1.2em;}
 	.box-text-right{font-weight: 200px; font-size: 1.2em;}
 	#grid-wrapper div .text {line-height: 1.2; font-size: 14px; text-align: justify; padding: 0 2px 2px 2px; font-family: serif;}
+	
+	#member-div {max-width: 375px; margin: auto;}
+	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
+	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.8em;}
+	#member-div #one-member .info {font-size: 16px; text-align: justify;}
 }
 /*iphone 6, Galaxy S5*/
 @media only screen and (max-width:360px) {
+	#top-content .textbox .top {font-size: 15px;}
+	#top-content .textbox .bottom {font-size: 10px;}
+
 	#page-title {font-weight: 350;font-size: 1.5em;}
 	#grid-wrapper {max-width: 360px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
 	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
 	.box-text-left{font-weight: 200px;font-size: 1.2em;}
 	.box-text-right{font-weight: 200px;font-size: 1.2em;}
 	#grid-wrapper div .text {line-height: 1.2;font-size: 14px;text-align: justify;padding: 0 2px 2px 2px;font-family: serif;}
+	#member-div {max-width: 360px;margin: auto;}
+	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
+	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.8em;}
+	#member-div #one-member .info {font-size: 16px;	text-align: justify;}
 }
-/*iphone 6/7/8 plus, Pixel 2*/
-@media only screen and (max-width:414px) {
-	#page-title {font-weight: 350;font-size: 1.5em;}
-	#grid-wrapper {max-width: 414px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
-	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
-	.box-text-left{font-weight: 200px;font-size: 1.2em;}
-	.box-text-right{font-weight: 200px;font-size: 1.2em;}
-	#grid-wrapper div .text {line-height: 1.2;font-size: 14px;text-align: justify;padding: 0 2px 2px 2px;font-family: serif;}
-}
-/*ipad*/
-@media only screen and (max-width:760px) {
-	#page-title {font-weight: 350;font-size: 2em;}
-	#grid-wrapper {max-width: 414px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
-	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
-	.box-text-left{font-weight: 200px;font-size: 1.2em;}
-	.box-text-right{font-weight: 200px;	font-size: 1.2em;}
-	#grid-wrapper div .text {line-height: 1.2; font-size: 14px; text-align: justify; padding: 0 2px 2px 2px; font-family: serif;}
-}
-/*media screen */
-/*iphone x*/
-@media only screen and (max-width:375px) {
-	.p-text {
-		font-size: 10px;
-		color: red;
-		background: white;
-	}
-	.h2-text {
-		font-size: 3rem;
-	}
-}
+
+
+
