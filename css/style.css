@@ -49,6 +49,9 @@ body {
     text-decoration: none;
     font-size: 17px;
 }
+.topnav .icon {
+	display: none;
+}
 .topnav a:hover, .dropdown:hover .dropbtn {
     background-color: #ddd;
     color: black;
@@ -104,6 +107,29 @@ body {
 .breaker {
     clear: both;
 }
+/* When the screen is less than 760 pixels wide, hide all links, except for the first two. Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 760px) {
+	.topnav a:not(:nth-child(-n+2)), .dropdown .dropbtn {display: none;}
+	.topnav a.icon {float:right; display:block;}
+	.topnav.responsive {position: relative;height: auto;}
+  	.topnav.responsive a.icon {position: absolute;right: 0; top: 0;}
+  	.topnav.responsive a {display: block;text-align: left;}
+    .topnav.responsive .dropdown {display: block;}
+    .topnav.responsive .dropdown-content {position: relative;}
+    .topnav.responsive .dropdown .dropbtn {display: block; width: 100%; text-align: left;}
+}
+
+/* When the screen is less than 375 pixels wide, hide all links, except for the first two. Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 375px) {
+	.topnav a:not(:nth-child(1)), .dropdown .dropbtn {display: none;}
+	.topnav a.icon {float: right;display: block;}
+	.topnav.responsive {position: relative;height: auto;}
+	.topnav.responsive a.icon {position: absolute;right: 0;top: 0;}
+	.topnav.responsive a {display: block;text-align: left;}
+	.topnav.responsive .dropdown {display: block;}
+	.topnav.responsive .dropdown-content {position: relative;}
+	.topnav.responsive .dropdown .dropbtn {display: block;width: 100%;text-align: left;}
+}
 
 @media screen and (min-width: 201px) and (max-width:450px) {
 	#top-content .textbox .top, #page-title {
@@ -114,33 +140,6 @@ body {
 	}
 }
   
-@media screen and (min-width: 451px) and (max-width:520px) {
-	#top-content .textbox .top, #page-title {
-	  font-size: 18px;
-	}
-	#top-content .textbox .bottom {
-	  font-size: 1em;
-	}
-}
-
-@media screen and (min-width: 521px) and (max-width:800px) {
-	#top-content .textbox .top, #page-title {
-	  font-size: 3.6vmax;
-	}
-	#top-content .textbox .bottom {
-	  font-size: 1em;
-	}
-}
-
-@media screen and (min-width: 801px) {
-	#top-content .textbox .top, #page-title {
-	  font-size: 34px;
-	}
-	#top-content .textbox .bottom {
-	  font-size: 1.5em;
-	}
-}
-
 #top-content {
 	display: grid;
 	margin: auto;
@@ -181,15 +180,30 @@ body {
 #top-content .textbox .bottom {
 	text-align: center;
 }
+@media screen and (min-width: 451px) and (max-width:520px) {
+	#top-content .textbox .top {font-size: 18px;}
+	#top-content .textbox .bottom {font-size: 1em;}
+}
+@media screen and (min-width: 521px) and (max-width:800px) {
+	#top-content .textbox .top {font-size: 3.6vmax;}
+	#top-content .textbox .bottom {font-size: 1em;}
+}
+@media screen and (min-width: 801px) {
+	#top-content .textbox .top {font-size: 34px;}
+	#top-content .textbox .bottom {font-size: 1.5em;}
+}
 
 #page-title {
 	max-width: auto;
-	max-height: 50px;
-	margin: auto;
+	max-height: auto;
+	margin: 16px auto;
+	padding: 16px 2px;
 	font-family: var(--my-font);
-	font-weight: 250;
+	font-weight: 350;
+	font-size: 3em;
+	line-height: 1.2;
 	text-align: center;
-	color: var(--color-darkblue-alpha);
+	color: var(--color-darkblue);
 }
 
 .mySlides {
@@ -307,133 +321,18 @@ body {
 	font-family: serif;
 }
 
-/*media screen */
-/*iphone x*/
-@media only screen and (max-width:375px) {
-	#grid-wrapper {
-		max-width: 375px;
-		max-height: 600px;
-		margin: auto;
-		grid-template-columns: 4fr 4fr 4fr; 
-		grid-template-rows: 50px 150px 150px 150px;
-	}
-	#grid-wrapper .topbox { 
-		background-image: url("../images/dna-bg-2.jpg");
-		height: 40px;
-		line-height: 1;
-		font-size: 2.5em;
-		font-weight: 350px;
-	}
-	.box-text-left{
-		font-weight: 200px;
-		color: black;
-		font-size: 1.2em;
-	}
-	.box-text-right{
-		font-weight: 200px;
-		color: black;
-		font-size: 1.2em;
-	}
-	#grid-wrapper div .text {
-		line-height: 1.2;
-		font-size: 14px;
-		text-align: justify;
-		padding: 0 2px 2px 2px;
-		font-family: serif;
-	}
-}
-/*iphone x*/
-@media only screen and (max-width:360px) {
-	#grid-wrapper {
-		max-width: 360px;
-		max-height: 600px;
-		margin: auto;
-		grid-template-columns: 4fr 4fr 4fr; 
-		grid-template-rows: 50px 150px 150px 150px;
-	}
-	#grid-wrapper .topbox { 
-		background-image: url("../images/dna-bg-2.jpg");
-		height: 40px;
-		line-height: 1;
-		font-size: 2.5em;
-		font-weight: 350px;
-	}
-	.box-text-left{
-		font-weight: 200px;
-		color: black;
-		font-size: 1.2em;
-	}
-	.box-text-right{
-		font-weight: 200px;
-		color: black;
-		font-size: 1.2em;
-	}
-	#grid-wrapper div .text {
-		line-height: 1.2;
-		font-size: 14px;
-		text-align: justify;
-		padding: 0 2px 2px 2px;
-		font-family: serif;
-	}
-
-}
-
-#footer {
-	border-top: 2px solid rgba(4, 48, 35, 0.849);
-	clear: both;
-	margin: auto;
-	padding: 5px 0;
-}
-#footer div {
-	margin: 0 auto;
-	overflow: hidden;
-	padding: 0;
-	max-width: 100%;
-}
-#footer div p {
-	color: #111111;
-	float: left;
-	font-size: 11px;
-	line-height: 27px;
-	margin: 0;
-	padding: 0 0 0 10px;
-}
-#footer div p span {
-	padding: 0 4px 0 0;
-}
-#footer div ul {
-	display: inline-block;
-	margin: auto;
-	overflow: hidden;
-	padding: 0;
-}
-#footer div ul li {
-	display: inline-block;
-	list-style: none;
-	margin: 0 4px 0 0;
-	padding: 0;
-}
-#footer div ul li a {
-	background: url(../images/icons.png) no-repeat;
-	display: block;
-	height: 27px;
-	margin: 0;
-	padding: 0;
-	text-indent: -99999px;
-	width: 27px;
-}
-#footer div ul #facebook a {
-	background-position: 0 0;
-}
-#footer div ul #facebook a:hover {
-	background-position: -32px 0;
-}
-#footer div ul #twitter a {
-	background-position: 0 -37px;
-}
-#footer div ul #twitter a:hover {
-	background-position: -32px -37px;
-}
+/*footer*/
+#footer {border-top: 2px solid rgba(4, 48, 35, 0.849);clear: both;margin: auto;padding: 5px 0;}
+#footer div {margin: 0 auto;overflow: hidden;padding: 0;max-width: 100%;}
+#footer div p {color: #111111;float: left;font-size: 11px;line-height: 27px;margin: 0; padding: 0 0 0 10px;}
+#footer div p span {padding: 0 4px 0 0;}
+#footer div ul {display: inline-block; margin: auto; overflow: hidden;padding: 0;}
+#footer div ul li {display: inline-block; list-style: none;	margin: 0 4px 0 0;padding: 0;}
+#footer div ul li a {background: url(../images/icons.png) no-repeat;display: block;height: 27px;margin: 0;padding: 0;text-indent: -99999px;width: 27px;}
+#footer div ul #facebook a {background-position: 0 0;}
+#footer div ul #facebook a:hover {background-position: -32px 0;}
+#footer div ul #twitter a {background-position: 0 -37px;}
+#footer div ul #twitter a:hover {background-position: -32px -37px;}
 
 /* members.html css */
 #member-div {
@@ -515,21 +414,25 @@ body {
 		display: none;
 	}
 }
-
+/*Sequencing Report*/
 #survey-form {
 	font-family: var(--my-font);
 	font-weight: 400;
 	line-height: 1.4;
+	font-size: 18px;
 	color: var(--color-white);
 	box-sizing: border-box;
 	background: var(--color-darkblue-alpha);
 	padding: 2.5rem 0.625rem;
 	border-radius: 0.25rem;
+	max-width: 600px;
+	margin: auto;
 	}
 #survey-form .sr-description {
     font-weight: 400;
     line-height: 1;
 	text-align: center;
+	font-size: 1.5em;
 }
 #survey-form div {
 	font-family: var(--my-font);
@@ -581,19 +484,50 @@ body {
 	line-height: inherit;
 	border: none;
 	display: block;
-	width: 20%;
+	width: 25%;
 	padding: 0.75rem;
 	background: cyan;
 	color: var(--color-darkblue);
 	border-radius: 2px;
 	}
 
-	.p-text {
-		font-size: 20px;
-		color: var(--color-white);
-		background: aqua;
-	}
-
+/*media screen */
+/*iphone x*/
+@media only screen and (max-width:375px) {
+	#page-title {font-weight: 350;font-size: 1.5em;}
+	#grid-wrapper {max-width: 375px;max-height: 600px;margin: auto;grid-template-columns: 4fr 4fr 4fr; grid-template-rows: 50px 150px 150px 150px;}
+	#grid-wrapper .topbox {height: 40px; line-height: 1;font-size: 2.5em;font-weight: 350px;}
+	.box-text-left{font-weight: 200px; font-size: 1.2em;}
+	.box-text-right{font-weight: 200px; font-size: 1.2em;}
+	#grid-wrapper div .text {line-height: 1.2; font-size: 14px; text-align: justify; padding: 0 2px 2px 2px; font-family: serif;}
+}
+/*iphone 6, Galaxy S5*/
+@media only screen and (max-width:360px) {
+	#page-title {font-weight: 350;font-size: 1.5em;}
+	#grid-wrapper {max-width: 360px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
+	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
+	.box-text-left{font-weight: 200px;font-size: 1.2em;}
+	.box-text-right{font-weight: 200px;font-size: 1.2em;}
+	#grid-wrapper div .text {line-height: 1.2;font-size: 14px;text-align: justify;padding: 0 2px 2px 2px;font-family: serif;}
+}
+/*iphone 6/7/8 plus, Pixel 2*/
+@media only screen and (max-width:414px) {
+	#page-title {font-weight: 350;font-size: 1.5em;}
+	#grid-wrapper {max-width: 414px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
+	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
+	.box-text-left{font-weight: 200px;font-size: 1.2em;}
+	.box-text-right{font-weight: 200px;font-size: 1.2em;}
+	#grid-wrapper div .text {line-height: 1.2;font-size: 14px;text-align: justify;padding: 0 2px 2px 2px;font-family: serif;}
+}
+/*ipad*/
+@media only screen and (max-width:760px) {
+	#page-title {font-weight: 350;font-size: 2em;}
+	#grid-wrapper {max-width: 414px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
+	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
+	.box-text-left{font-weight: 200px;font-size: 1.2em;}
+	.box-text-right{font-weight: 200px;	font-size: 1.2em;}
+	#grid-wrapper div .text {line-height: 1.2; font-size: 14px; text-align: justify; padding: 0 2px 2px 2px; font-family: serif;}
+}
 /*media screen */
 /*iphone x*/
 @media only screen and (max-width:375px) {
@@ -606,5 +540,3 @@ body {
 		font-size: 3rem;
 	}
 }
-
-/*Sequencing request */
