@@ -337,8 +337,8 @@ body {
 /* members.html css */
 #member-div {
 	padding: 10px 10px 10px 10px;
+	max-width: 1200px;
 	margin: auto;
-	max-width: 1000px;
 	background-color: rgba(231, 192, 133, 0.658);
 	text-align: center;
 	display: grid;
@@ -349,71 +349,47 @@ body {
 }
 #member-div #one-member {
 	font-family: var(--my-font);
-    width: 100%;
-    height: 200px;
-    max-width: 625px;
+	height: 300px;
     margin-left: auto;
 	margin-right: auto;
+	grid-column: 1/3;
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	
+}
+
+#member-div #one-member .person {
 	display: flex;
 	flex-direction: row;
-	border-style: solid;
-	border-color: #767676;
-	border-radius: 20%;
-	border-top-left-radius: 0;	
-	border-bottom-left-radius: 0;	
+	flex-wrap: nowrap;
+	justify-content: center;
 }
-#member-div #one-member.top {
-	grid-column: 1/3;
-}
-#member-div #one-member .profile-photo {
-	width: 150px;
-	height: auto;
+
+#member-div #one-member .person .profile-photo {
+	width: 180px;
+	height: 140px;
 	object-fit: cover;
 	border-radius: 8px;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
-#member-div #one-member .content {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	flex-wrap: nowrap;
-	width: 100%;
-	margin-left: 2px;
+#member-div #one-member .person .name {
+	text-align: center;
+	align-self: center;
+	line-height: 1.5;
+	justify-content: center;
+	font-size: 2.5em;
 	font-family: var(--my-font);
 }
-#member-div #one-member .content .name h3 {
-	text-align: left;
-	height: 10px;
-	line-height: 10px;
+#member-div #one-member .person .info {
+	width: 100%;
 	font-family: var(--my-font);
+	padding: 6px 6px;
+	
 }
 
-#member-div #one-member .content .info p {
-	text-align: justify;
-	line-height: 20px;
-	font-size: 100%;
-	padding: 0 4px 4px 4px;
-}
-@media screen and (max-width:500px) {
-	#member-div #one-member.top .profile-photo {
-		width: 60px;
-		height: 60px;
-		object-fit: cover;
-		border-radius: 8px;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-		margin: 0 auto;
-	}
-	#member-div #one-member.other .content .name h3 {
-		font-size: 3.5vmax;
-	}
-}
-@media screen and (max-width:800px) {
-	#member-div #one-member.other .profile-photo {
-		display: none;
-	}
-}
+
 /*Sequencing Report*/
 #survey-form {
 	font-family: var(--my-font);
