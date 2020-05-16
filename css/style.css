@@ -197,8 +197,25 @@ body {
 	color: var(--color-darkblue);
 	text-shadow: 1px 1px 1px var(--color-gray);
 }
+
+#section-title {
+	max-width: auto;
+	max-height: auto;
+	margin: 16px auto;
+	padding: 16px 2px;
+	font-family: var(--my-font);
+	font-weight: 300;
+	font-size: 2.5em;
+	line-height: 1.2;
+	text-align: center;
+	color: var(--color-darkblue);
+	text-shadow: 1px 1px 1px var(--color-gray);
+}
+
 #body-content {
 	color: var(--color-darkblue);
+	max-width: 1200px;
+	margin: auto;
 	padding: 6px 6px;
 	font-family: var(--my-font);
 	font-size: 14px;
@@ -342,6 +359,22 @@ body {
 #footer div ul #twitter a:hover {background-position: -32px -37px;}
 
 /* members.html css */
+#page-nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	max-width: 300px;
+	margin: auto;
+	justify-content: space-evenly;
+}
+#page-nav a {
+	box-sizing: content-box;
+	padding: 4px 6px;
+	box-shadow: 2px 2px 2px var(--color-gray);
+	background-color: var(--color-darkblue);
+	color: var(--color-white);
+	font-family: var(--my-font);
+}
 #member-div {
 	padding: 10px 10px 10px 10px;
 	max-width: 1200px;
@@ -356,6 +389,7 @@ body {
 }
 #member-div #one-member {
 	font-family: var(--my-font);
+	/* change height to max-height: auto; when actual member summaries have been added to html */
 	height: 300px;
     margin-left: auto;
 	margin-right: auto;
@@ -386,6 +420,12 @@ body {
 	padding-left: 6px;
 	color: white;
 	text-shadow: 1px 1px 1px black;
+}
+#member-div #one-member .person .name .mail {
+	display: block;
+	color: white;
+	padding-left: 6px;
+	font-size: 12px;
 }
 #member-div #one-member .info {
 	width: 100%;
@@ -484,6 +524,7 @@ body {
 	#top-content .textbox .bottom {font-size: 12px;}
 
 	#page-title {font-weight: 350;font-size: 2em;}
+	#section-title {font-weight: 250;font-size: 1.8em;}
 
 	#grid-wrapper {max-width: 768px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
 	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
@@ -502,6 +543,7 @@ body {
 	#top-content .textbox .bottom {font-size: 12px;}
 	
 	#page-title {font-weight: 350;font-size: 1.5em;}
+	#section-title {font-weight: 250;font-size: 1.3em;}
 
 	#grid-wrapper {max-width: 414px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
 	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
@@ -511,7 +553,7 @@ body {
 	
 	#member-div {max-width: 414px;margin: auto;}
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
-	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.8em;}
+	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.5em;}
 	#member-div #one-member .info {font-size: 18px;	text-align: justify;}
 }
 /*iphone x*/
@@ -520,6 +562,7 @@ body {
 	#top-content .textbox .bottom {font-size: 10px;}
 
 	#page-title {font-weight: 350;font-size: 1.5em;}
+	#section-title {font-weight: 250;font-size: 1.3em;}
 
 	#grid-wrapper {max-width: 375px;max-height: 600px;margin: auto;grid-template-columns: 4fr 4fr 4fr; grid-template-rows: 50px 150px 150px 150px;}
 	#grid-wrapper .topbox {height: 40px; line-height: 1;font-size: 2.5em;font-weight: 350px;}
@@ -538,6 +581,7 @@ body {
 	#top-content .textbox .bottom {font-size: 10px;}
 
 	#page-title {font-weight: 350;font-size: 1.5em;}
+	#section-title {font-weight: 250;font-size: 1.3em;}
 
 	#grid-wrapper {max-width: 360px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
 	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
