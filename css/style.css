@@ -387,6 +387,10 @@ body {
 	column-gap: 10px;
 	font-family: var(--my-font);
 }
+#twitter-feed {
+	max-width: 800px;
+	margin: auto;
+}
 #member-div #one-member {
 	font-family: var(--my-font);
 	/* change height to max-height: auto; when actual member summaries have been added to html */
@@ -592,6 +596,7 @@ body {
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
 	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.2em;}
 	#member-div #one-member .info {font-size: 16px;	text-align: justify;}
+}
 
 	/*iphone 5, Samsung S7*/
 @media only screen and (max-width:320px) {
@@ -610,6 +615,4 @@ body {
 	#member-div #one-member .info {font-size: 16px;	text-align: justify;}
 
 	#footer div ul {clear: both; display: block; text-align: center; margin: auto; overflow: hidden;padding: 0;}
-
 }
-
