@@ -417,6 +417,9 @@ body {
 	bottom: 0.5px;
   }
 
+  .myBtn {
+	border:none;
+  }
   .modal {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
@@ -681,6 +684,7 @@ body {
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
 	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.5em;}
 	#member-div #one-member .info {font-size: 18px;	text-align: justify;}
+
 }
 /*iphone x*/
 @media only screen and (max-width:375px) {
@@ -691,6 +695,7 @@ body {
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
 	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.2em;}
 	#member-div #one-member .info {font-size: 16px; text-align: justify;}
+
 }
 /*iphone 6, Galaxy S5*/
 @media only screen and (max-width:360px) {
