@@ -419,6 +419,8 @@ body {
 
   .myBtn {
 	border:none;
+	-webkit-appearance: none;
+    -moz-appearance: none;
   }
   .modal {
 	display: none; /* Hidden by default */
@@ -690,6 +692,12 @@ body {
 @media only screen and (max-width:375px) {
 	#top-content .textbox .top {font-size: 15px;}
 	#top-content .textbox .bottom {font-size: 10px;}
+
+	.bottombox3r .text .text-concat, .bottombox4l .text .text-concat {
+		max-height: 11.2em; /* (Number of lines you want visible) * (line-height) */
+		line-height: 1.2em;
+		text-align:left;
+	}
 	
 	#member-div {max-width: 375px; margin: auto;}
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
