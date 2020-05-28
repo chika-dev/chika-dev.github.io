@@ -4,14 +4,18 @@
 	--color-orange: #d46f22;
 	--color-darkblue: rgba(27, 27, 50);
 	--color-darkblue-alpha: rgba(27, 27, 50,0.8);
-	--color-gray: rgba(91, 108, 112, 0.8);
-	--my-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	--color-black: rgba(5,5,5,1);
+	--color-gray: rgba(126, 133, 128, 0.8);
+	--color-darkgray: #323633;
+	--color-light-blue-patina: #669999;
+	--color-deep-teal: #003333;
+	--my-font: "Open Sans", Arial, sans-serif;
 }
 html {
 	background-color: hsla(180 100% 50% 0.05);
 }
 body {
-	background: linear-gradient(180deg, #ffffff,#70a5d1);
+	background: var(--color-white);
 	font-weight: normal;
 	margin: 0;
 	font-family: var(--my-font);
@@ -19,7 +23,7 @@ body {
 #container {
     width: 100%;
     max-height: 50px;
-    background-color: var(--color-gray);
+    background: linear-gradient(45deg, var(--color-black), var(--color-gray));
     position: fixed;
     top: 0;
     margin-bottom: 20px;
@@ -37,8 +41,7 @@ body {
 	display: block;
 }
 .topnav {
-    background-color: var(--color-gray);
-    overflow: hidden;
+	overflow: hidden;
     top: 0;
     width: auto;
 	height: 50px;
@@ -65,7 +68,7 @@ body {
     color: black;
 }
 .topnav a.active {
-    background-color: var(--color-darkblue);
+    background-color: var(--color-darkgray);
     color: rgb(255, 255, 255);
 }
 .dropdown {
@@ -119,7 +122,7 @@ body {
 @media screen and (max-width: 760px) {
 	.topnav a:not(:nth-child(-n+2)), .dropdown .dropbtn {display: none;}
 	.topnav a.icon {float:right; display:block;}
-	.topnav.responsive {position: relative;height: auto;}
+	.topnav.responsive {background-color: var(--color-gray);position: relative;height: auto;}
   	.topnav.responsive a.icon {position: absolute;right: 0; top: 0;}
   	.topnav.responsive a {display: block;text-align: left;}
     .topnav.responsive .dropdown {display: block;}
@@ -177,7 +180,7 @@ body {
 	font-weight: 400;
 	text-align: center;
 	font-size: 2.2em;
-	text-shadow: 1px 1px 1px orangered;
+	text-shadow: 1px 1px 1px var(--color-gray);
 }
 #top-content .textbox .bottom {
 	text-align: center;
@@ -190,36 +193,88 @@ body {
 	margin: 16px auto;
 	padding: 16px 2px;
 	font-family: var(--my-font);
-	font-weight: 350;
-	font-size: 3em;
+	font-weight: 300;
+	font-size: 30px;
 	line-height: 1.2;
 	text-align: center;
-	color: var(--color-darkblue);
+	color: var(--color-black);
 	text-shadow: 1px 1px 1px var(--color-gray);
-}
+} 
 
 #section-title {
-	max-width: auto;
+	display: flex;
+	flex: 1;
+	width: 70%;
+	max-width: 800px;
+	max-height: auto;
+	margin: 16px auto;
+	font-family: var(--my-font);
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 1.2;
+}
+
+#section-title:before, #section-title:after {
+	content: '';
+  	flex-grow: 1;
+  	margin: 0px 4px;
+  	background-size: 100% 3px;
+  	background-position: 0% 50%;
+  	background-repeat: repeat-x;
+}
+#section-title:before {
+	background-image: linear-gradient(to right, var(--color-darkgray), transparent);
+}
+#section-title:after {
+	background-image: linear-gradient(to left, var(--color-darkgray), transparent);
+}
+
+/*#section-title {
+	max-width: 800px;
 	max-height: auto;
 	margin: 16px auto;
 	padding: 16px 2px;
 	font-family: var(--my-font);
 	font-weight: 300;
-	font-size: 2.5em;
+	font-size: 24px;
 	line-height: 1.2;
 	text-align: center;
-	color: var(--color-darkblue);
+	background-color: var(--color-darkgray);
+	color: var(--color-white);
 	text-shadow: 1px 1px 1px var(--color-gray);
-}
+} */
 
 #body-content {
-	color: var(--color-darkblue);
-	max-width: 1200px;
+	color: var(--color-black);
+	max-width: 800px;
 	margin: auto;
 	padding: 6px 6px;
 	font-family: var(--my-font);
-	font-size: 14px;
+	font-size: 16px;
 	text-align: justify;
+}
+
+#home-logo {
+	height: 350px;
+	width: 100%;
+	max-width: 800px;
+	background-color: var(--color-gray);
+	background-image: url(../images/ife_lab.jpg);
+	background-size: 100% auto;
+	margin: auto;
+	text-align: center;
+}
+#home-logo .logo {
+	object-fit: contain;
+	max-width: 70%;
+    margin: auto;
+	display: block;
+}
+#home-logo .about {
+	color: var(--color-white);
+	font-family: var(--my-font);
+	font-size: 16px;
+	font-weight: 200;
 }
 
 .mySlides {
@@ -229,121 +284,177 @@ body {
 }
 
 #grid-wrapper {
-	max-height: 600px;
-	max-width: 1200px;
+	max-height: auto;
+	max-width: 800px;
 	margin: auto;
-	background-color: rgba(197, 212, 212, 0.788);
+	background-color: var(--color-gray);
 	display: grid;
-	grid-template-columns: 3fr 4fr 3fr; 
-	grid-template-rows: 50px 150px 150px 150px;
+	grid-template-columns: 1fr 1fr; 
+	grid-template-rows: 30px 240px 240px 240px 240px;
 	gap: 3px 0;	
 	padding: 6px 6px 6px 6px;
 	background-size: 100% 100%;
 	font-family: var(--my-font);
 }
 #grid-wrapper .topbox { 
-	background-image: url("../images/dna-bg-2.jpg");
-	height: 50px;
-	line-height: 1;
-	font-size: 3em;
+    background: linear-gradient(45deg, var(--color-black), var(--color-gray));
+	height: 30px;
+	width: 100%;
+	line-height: 1.5;
+	font-size: 20px;
 	font-weight: 400px;
-	grid-column: 1/4; 
+	grid-column: 1/3; 
 	grid-row: 1/2; 
 	margin-left: 0;
 	margin-right: 0;
-	border-radius: 2em;
 	text-align: center;
 	text-transform: uppercase;
+	color: var(--color-white)
 }
-.white-text {
-	color: #FFFFFF;
-}
-.box-text-left{
+.box-text{
 	font-family: var(--my-font);
-	font-weight: 400px;
-	box-shadow: var(--color-darkblue-alpha);
-	color: black;
-	font-size: 2em;
-	width: max-content;
-	margin-left: auto;
-	border-bottom-left-radius: 0.2em;
-	border-top-left-radius: 0.2em;
+	font-weight: 200px;
+	color: var(--color-black);
+	font-size: 18px;
+	height: auto;
 	padding: 2px 2px;
-	background: #81b5e0;
-	text-shadow: 1px 1px 1px white;
-}
-.box-text-right{
-	font-family: var(--my-font);
-	font-weight: 400px;
-	color: black;
-	font-size: 2em;
-	width: max-content;
-	margin-right: auto;
-	border-bottom-right-radius: 0.2em;
-	border-top-right-radius: 0.2em;
-	padding: 2px 2px;
-	background: #81b5e0;
-	text-shadow: 1px 1px 1px white;
+	margin: 0;
+	line-height: 1;
+	text-align: center;
 }
 .bottombox1l { 
-	background-image: url("../images/bacteria.jpg");
-	background-size: 100% 100%;
-	grid-column: 1 / 3; 
+	background-image: url("#");
+	background-size: contain;
+	grid-column: 1 / 2; 
 	grid-row: 2 / 3;
-	border-top-left-radius: 2em;
-	border-bottom-left-radius: 2em;
-	text-align: right;
-  }
+}
 .bottombox1r {
-	grid-column: 3/4;
-	background: #81b5e0;
-	padding: 0em 0.2em;
+	grid-column: 2/3;
+	background: #d0d2d6;
+	padding: 0 2px;
 	font-family: var(--my-font);
-	border-top-right-radius: 1em;
-	border-bottom-right-radius: 1em;
 }
 .bottombox2r { 
-	background-image: url("../images/pill.jpg");
-	background-size: 100% 100%;
-	grid-column: 2 / 4; 
+	background-image: url("#");
+	background-size: contain;
+	grid-column: 2 / 3; 
 	grid-row: 3 / 4;
-	border-top-right-radius: 2em;
-	border-bottom-right-radius: 2em;
-	text-align: left;
 }
 .bottombox2l {
 	grid-column: 1/2;
-	background: #81b5e0;
-	padding: 0em 0.2em;
+	background: #d0d2d6;
+	padding: 0 2px;
 	font-family: var(--my-font);
-	border-top-left-radius: 1em;
-	border-bottom-left-radius: 1em;
 }
 .bottombox3l { 
-	background-image: url("../images/molecule.jpg");
-	background-size: 100% 100%;
+	background-image: url("#");
+	background-size: contain;
 	text-align: center;
-	grid-column: 1 / 3; 
+	grid-column: 1 / 2; 
 	grid-row: 4 / 5;
-	border-top-left-radius: 2em;
-	border-bottom-left-radius: 2em;
-	text-align: right;
 }
 .bottombox3r {
-	grid-column: 3/4;
-	background: #81b5e0;
-	padding: 0em 0.2em;
+	grid-column: 2/3;
+	background: #d0d2d6;
+	padding: 0 2px;
 	font-family: var(--my-font);
-	border-top-right-radius: 1em;
-	border-bottom-right-radius: 1em;
+}
+.bottombox4r { 
+	background-image: url("#");
+	background-size: contain;
+	grid-column: 2 / 3; 
+	grid-row: 3 / 4;
+}
+.bottombox4l {
+	grid-column: 1/2;
+	background: #d0d2d6;
+	padding: 0 2px;
+	font-family: var(--my-font);
 }
 #grid-wrapper div .text {
 	line-height: 1.2;
-	font-size: 16px;
-	text-align: justify;
-	padding: 0 2px 2px 2px;
-	font-family: serif;
+	font-size: 14px;
+	text-align: left;
+	padding: 2px 2px;
+	
 }
+
+.bottombox1r .text, .bottombox2l .text, .bottombox3r .text, .bottombox4l .text {
+	position: relative;
+	font-size: 14px;
+	font-family: var(--my-font);
+	margin: 0;
+	color: black;
+	width: auto; /* Could be anything you like. */
+  }
+/* max height and line height set to fit 2 divs in the space*/
+.bottombox1r .text .text-concat, .bottombox2l .text .text-concat {
+	position: relative;
+	display: inline-block;
+	word-wrap: break-word;
+	overflow: hidden;
+	max-height: 6em; /* (Number of lines you want visible) * (line-height) */
+	line-height: 1.22em;
+	text-align:left;
+  }
+/* max height and line height set to fit 1 div in the space*/
+.bottombox3r .text .text-concat, .bottombox4l .text .text-concat {
+	position: relative;
+	display: inline-block;
+	word-wrap: break-word;
+	overflow: hidden;
+	max-height: 11.5em; /* (Number of lines you want visible) * (line-height) */
+	line-height: 1.2em;
+	text-align:left;
+}
+  
+.bottombox1r .text.ellipsis .text-concat::after, .bottombox2l .text.ellipsis .text-concat::after, .bottombox3r .text.ellipsis .text-concat::after, .bottombox4l .text.ellipsis .text-concat::after {
+	content: "read more";
+	position: absolute;
+	right: 0px; 
+	background-color: var(--color-darkgray);
+	color: var(--color-white);
+	bottom: 0.5px;
+  }
+
+  .modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content, .modal-content2,
+  .modal-content3, .modal-content4,
+  .modal-content5, .modal-content6,
+  .modal-content7, .modal-content8 {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+  }
+  /* The Modal Content Close Button */
+  .close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover, .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
 
 /*footer*/
 #footer {border-top: 2px solid rgba(4, 48, 35, 0.849);clear: both;margin: auto;padding: 5px 0;}
@@ -371,15 +482,18 @@ body {
 	box-sizing: content-box;
 	padding: 4px 6px;
 	box-shadow: 2px 2px 2px var(--color-gray);
-	background-color: var(--color-darkblue);
+	border-radius: 1em;
+	background-color: var(--color-darkgray);
 	color: var(--color-white);
 	font-family: var(--my-font);
+	text-decoration: none;
+	font-size: 14px;
 }
 #member-div {
 	padding: 10px 10px 10px 10px;
-	max-width: 1200px;
 	margin: auto;
-	background-color: var(--color-gray);
+	max-width: 800px;
+	background-color: transparent;
 	text-align: center;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -394,14 +508,16 @@ body {
 #member-div #one-member {
 	font-family: var(--my-font);
 	/* change height to max-height: auto; when actual member summaries have been added to html */
-	height: 300px;
+	height: auto;
     margin-left: auto;
 	margin-right: auto;
 	grid-column: 1/3;
 	display: flex;
 	flex-direction: column;
 	align-content: space-between;
+	padding: 16px 16px;
 }
+
 #member-div #one-member .person {
 	display: flex;
 	flex-direction: row;
@@ -419,38 +535,37 @@ body {
 	align-self: center;
 	line-height: 1.2;
 	justify-content: center;
-	font-size: 2.5em;
+	font-size: 20px;
 	font-family: var(--my-font);
 	padding-left: 6px;
-	color: white;
-	text-shadow: 1px 1px 1px black;
+	color: var(--color-black);
+	text-shadow: 1px 1px 1px var(--color-gray);
 }
 #member-div #one-member .person .name .mail {
 	display: block;
-	color: white;
+	color: var(--color-darkgray);
 	padding-left: 6px;
 	font-size: 12px;
 }
 #member-div #one-member .info {
-	width: 100%;
+	width: fit-content;
 	font-family: var(--my-font);
 	padding: 6px 6px;
-	font-size: 20px;
+	font-size: 14px;
 	text-align: justify;
-	color: white;
-	text-shadow: 0.5px 0.5px 0.5px black;	
+	color: var(--color-black);
 }
 
 
 /*Sequencing Report*/
 #survey-form {
 	font-family: var(--my-font);
-	font-weight: 400;
+	font-weight: 300;
 	line-height: 1.4;
-	font-size: 18px;
+	font-size: 16px;
 	color: var(--color-white);
 	box-sizing: border-box;
-	background: var(--color-darkblue-alpha);
+	background: var(--color-darkgray);
 	padding: 2rem 0.625rem;
 	border-radius: 0.25rem;
 	max-width: 600px;
@@ -460,24 +575,22 @@ body {
     font-weight: 400;
     line-height: 1;
 	text-align: center;
-	font-size: 1em;
+	font-size: 16px;
 }
 #survey-form div {
 	font-family: var(--my-font);
 	box-sizing: border-box;
 	margin: 0 auto 1.25rem auto;
 	padding: 0.25rem;
-	}
-	
+	}	
 #survey-form #label {
 	display: flex;
 	align-items: center;
 	margin-bottom: 0.5rem;
-	}
-	
+	}	
 #survey-form .field {
 	margin: 0;
-	font-family: inherit;
+	font-family: var(--my-font);
 	line-height: inherit;
 	display: block;
 	width: 100%;
@@ -490,7 +603,6 @@ body {
 	border-radius: 0.25rem;
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 	}
-
 #survey-form #dropdown {
 	box-sizing: border-box;
 	background-clip: padding-box;
@@ -499,61 +611,71 @@ body {
 	box-sizing: content-box;
 	margin: auto;
 	max-width: 80%;
-	font-family: inherit;
+	font-family: var(--my-font);
 	line-height: inherit;
 	padding: 0.625rem;
 	resize: both;
 	}
-	
 #survey-form div #submit {
 	box-sizing: border-box;
 	margin: auto;
-	font-family: inherit;
-	font-weight: 400;
+	font-family: var(--my-font);
+	font-weight: 300;
 	line-height: inherit;
 	border: none;
 	display: block;
 	width: 25%;
 	padding: 0.75rem;
-	background: cyan;
-	color: var(--color-darkblue);
+	background: var(--color-orange);
+	color: var(--color-black);
 	border-radius: 2px;
 	}
 
 /*media screen */
 
+@media only screen and (min-width:768px) {
+	#home-logo {
+		height: 600px;
+		width: 100%;
+		max-width: 100%;
+		background-color: var(--color-gray);
+		background-image: url(../images/ife_lab.jpg);
+		background-size: 100% auto;
+		margin: auto;
+		text-align: center;
+	}
+	#home-logo .logo {
+		object-fit: contain;
+		max-width: 100%;
+		margin: auto;
+		display: block;
+	}
+	.bottombox3r .text .text-concat, .bottombox4l .text .text-concat {
+		max-height: 12em; /* (Number of lines you want visible) * (line-height) */
+		line-height: 1.2em;
+	}
+}
 /*ipad*/
 @media only screen and (max-width:768px) {
 	#top-content .textbox .top {font-size: 1.8em;}
 	#top-content .textbox .bottom {font-size: 12px;}
-
-	#page-title {font-weight: 350;font-size: 2em;}
-	#section-title {font-weight: 250;font-size: 1.8em;}
-
-	#grid-wrapper {max-width: 768px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
-	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
-	.box-text-left{font-weight: 200px;font-size: 1.2em;}
-	.box-text-right{font-weight: 200px;	font-size: 1.2em;}
-	#grid-wrapper div .text {line-height: 1.2; font-size: 14px; text-align: justify; padding: 0 2px 2px 2px; font-family: serif;}
 	
+	.bottombox3r .text .text-concat, .bottombox4l .text .text-concat {
+		max-height: 12em; /* (Number of lines you want visible) * (line-height) */
+		line-height: 1.2em;
+	}
+
 	#member-div {max-width: 768px;margin: auto;}
 	#member-div #one-member .person .profile-photo {width: 180px;height: 140px;border-radius: 8px;}
 	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 2em;}
 	#member-div #one-member .info {font-size: 18px;text-align: justify;}
+
 }
 /*iphone 6/7/8 plus, Pixel 2*/
 @media only screen and (max-width:414px) {
 	#top-content .textbox .top {font-size: 17px;}
 	#top-content .textbox .bottom {font-size: 12px;}
 	
-	#page-title {font-weight: 350;font-size: 1.5em;}
-	#section-title {font-weight: 250;font-size: 1.3em;}
-
-	#grid-wrapper {max-width: 414px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
-	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
-	.box-text-left{font-weight: 200px;font-size: 1.2em;}
-	.box-text-right{font-weight: 200px;font-size: 1.2em;}
-	#grid-wrapper div .text {line-height: 1.2;font-size: 14px;text-align: justify;padding: 0 2px 2px 2px;font-family: serif;}
 	
 	#member-div {max-width: 414px;margin: auto;}
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
@@ -564,15 +686,6 @@ body {
 @media only screen and (max-width:375px) {
 	#top-content .textbox .top {font-size: 15px;}
 	#top-content .textbox .bottom {font-size: 10px;}
-
-	#page-title {font-weight: 350;font-size: 1.5em;}
-	#section-title {font-weight: 250;font-size: 1.3em;}
-
-	#grid-wrapper {max-width: 375px;max-height: 600px;margin: auto;grid-template-columns: 4fr 4fr 4fr; grid-template-rows: 50px 150px 150px 150px;}
-	#grid-wrapper .topbox {height: 40px; line-height: 1;font-size: 2.5em;font-weight: 350px;}
-	.box-text-left{font-weight: 200px; font-size: 1.2em;}
-	.box-text-right{font-weight: 200px; font-size: 1.2em;}
-	#grid-wrapper div .text {line-height: 1.2; font-size: 14px; text-align: justify; padding: 0 2px 2px 2px; font-family: serif;}
 	
 	#member-div {max-width: 375px; margin: auto;}
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
@@ -583,15 +696,7 @@ body {
 @media only screen and (max-width:360px) {
 	#top-content .textbox .top {font-size: 15px;}
 	#top-content .textbox .bottom {font-size: 10px;}
-
-	#page-title {font-weight: 350;font-size: 1.5em;}
-	#section-title {font-weight: 250;font-size: 1.3em;}
-
-	#grid-wrapper {max-width: 360px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 50px 150px 150px 150px;}
-	#grid-wrapper .topbox {height: 40px; line-height: 1; font-size: 2.5em; font-weight: 350px;}
-	.box-text-left{font-weight: 200px;font-size: 1.2em;}
-	.box-text-right{font-weight: 200px;font-size: 1.2em;}
-	#grid-wrapper div .text {line-height: 1.2;font-size: 14px;text-align: justify;padding: 0 2px 2px 2px;font-family: serif;}
+	
 	#member-div {max-width: 360px;margin: auto;}
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
 	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.2em;}
@@ -602,13 +707,7 @@ body {
 @media only screen and (max-width:320px) {
 	#top-content .textbox .top {font-size: 13px;}
 	#top-content .textbox .bottom {font-size: 10px;}
-
-	#page-title {font-weight: 350;font-size: 1.5em;}
-	#grid-wrapper {max-width: 320px; max-height: 600px; margin: auto; grid-template-columns: 4fr 4fr 4fr;  grid-template-rows: 40px 150px 150px 150px;}
-	#grid-wrapper .topbox {height: 35px; line-height: 1; font-size: 2em; font-weight: 350px;}
-	.box-text-left{font-weight: 200px;font-size: 1em;}
-	.box-text-right{font-weight: 200px;font-size: 1em;}
-	#grid-wrapper div .text {line-height: 1.2;font-size: 12px;text-align: justify;padding: 0 2px 2px 2px;font-family: serif;}
+	
 	#member-div {max-width: 360px;margin: auto;}
 	#member-div #one-member .person .profile-photo {width: 100px;height: 100px;}
 	#member-div #one-member .person .name {text-align: center;align-self: center;line-height: 1.2;font-size: 1.2em;}
