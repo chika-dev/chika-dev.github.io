@@ -694,7 +694,7 @@ body {
 	#top-content .textbox .bottom {font-size: 10px;}
 
 	.bottombox3r .text .text-concat, .bottombox4l .text .text-concat {
-		max-height: 11.2em; /* (Number of lines you want visible) * (line-height) */
+		max-height: 11.25em; /* (Number of lines you want visible) * (line-height) */
 		line-height: 1.2em;
 		text-align:left;
 	}
