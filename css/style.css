@@ -20,6 +20,9 @@ body {
 	margin: 0;
 	font-family: var(--my-font);
 }
+a {
+	color: rgb(207, 58, 58);
+}
 #container {
     width: 100%;
     max-height: 50px;
@@ -130,7 +133,7 @@ body {
     .topnav.responsive .dropdown .dropbtn {display: block; width: 100%; text-align: left;}
 }
 
-/* When the screen is less than 375 pixels wide, hide all links, except for the first two. Show the link that contains should open and close the topnav (.icon) */
+/* When the screen is less than 375 pixels wide, hide all links, except for the first one. Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 375px) {
 	.topnav a:not(:nth-child(1)), .dropdown .dropbtn {display: none;}
 	.topnav a.icon {float: right;display: block;}
@@ -228,21 +231,6 @@ body {
 #section-title:after {
 	background-image: linear-gradient(to left, var(--color-darkgray), transparent);
 }
-
-/*#section-title {
-	max-width: 800px;
-	max-height: auto;
-	margin: 16px auto;
-	padding: 16px 2px;
-	font-family: var(--my-font);
-	font-weight: 300;
-	font-size: 24px;
-	line-height: 1.2;
-	text-align: center;
-	background-color: var(--color-darkgray);
-	color: var(--color-white);
-	text-shadow: 1px 1px 1px var(--color-gray);
-} */
 
 #body-content {
 	color: var(--color-black);
@@ -721,7 +709,7 @@ body {
 	#member-div #one-member .info {font-size: 16px;	text-align: justify;}
 }
 
-	/*iphone 5, Samsung S7*/
+/*iphone 5, Samsung S7*/
 @media only screen and (max-width:320px) {
 	#top-content .textbox .top {font-size: 13px;}
 	#top-content .textbox .bottom {font-size: 10px;}
