@@ -13,11 +13,14 @@ function carousel() {
   setTimeout(carousel, 10000); // Change image every 10 seconds
 }
 function navmenuFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
+  var x = document.getElementById("navbar");
+  var y = document.getElementById("main-doc");
+  if (x.className === "menunav") {
     x.className += " responsive";
+    y.className += " responsive";
   } else {
-    x.className = "topnav";
+    x.className = "menunav";
+    y.className = "main-doc";
   }
 }
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
@@ -29,4 +32,5 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
 
