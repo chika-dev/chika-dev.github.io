@@ -112,6 +112,24 @@ body {
     text-align: center;
     color: var(--my-peach);
     }
+@keyframes up-down {
+  	from {
+    	transform: translate(0, 0);
+    }
+    to {
+    	transform: translate(0, 10px);
+    }
+}
+#arrow {
+    position: absolute;
+    bottom: 20px;
+    font-size: 42px;  
+    background: -webkit-linear-gradient(var(--my-peach), var(--my-yellow));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: 0.6s up-down infinite alternate;
+}
 #projects {
     margin: auto;
     text-align: center;
@@ -247,7 +265,7 @@ body {
     border-radius: 2px;
     font-size: 22px;
     text-shadow: 2px 2px 1px #1f1f1f;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-in-out;
     }
     #contact-section .contact-links .contact-details:hover {
         transform: translate(0, 10px);
