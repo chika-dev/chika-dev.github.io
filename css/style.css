@@ -751,7 +751,7 @@ a {
 	bottom: 0;
 }
 
-/* Blog */
+/* Blog | Courses pages also use the nav and main-doc set up*/ 
 .menunav {
     color: white;
     font-family: var(--my-font);
@@ -813,6 +813,7 @@ a {
 }
 #main-doc {
 	margin-left: 200px;
+	padding: 4px 16px;
 }
 #article-summary {
 	display: grid;
