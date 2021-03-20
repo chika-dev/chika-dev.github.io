@@ -1,0 +1,98 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(35, 39, 53);
+}
+
+#navbar{
+    background-color: rgb(41, 37, 37);
+    text-align: end;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.navbar-div ul li{
+    padding: 16px;
+    font-size: large;
+}
+.navbar-div ul li a{
+    padding-right: 40px;
+    color: white;
+}
+
+#welcome-section{
+    height: 100vh; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 64, 64);
+    color: white;
+}
+#welcome-section h1{
+    text-align: center;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.p{
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+}
+p{
+    padding-bottom: 20px;
+}
+.project-divs {
+    background-color: rgb(202, 181, 181);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 10px;
+}
+
+
+.link_divs{
+    background-color: rgb(202, 181, 181);
+    padding-left: 16px;
+    margin-top: 30px;
+}
+.project-caption {
+    text-align: center;
+    color:  black;
+    font-size: 1em;
+}
+a:hover{
+    background-color: transparent;
+    color: rgb(247, 247, 252);
+    text-decoration-line: underline;
+}
+@media screen and (max-width: 700px) {
+    .project-divs {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .link_divs img {
+        width: 100%;
+    }
+  }
+
+footer{
+    justify-content: center;
+}
+.footer_div{
+    text-align: center;
+    color: white;
+    padding-bottom: 16px;
+}
+.footer_div ul a{
+    padding-top: 30px;
+    padding-right: 30px;
+    color: white;
+}
+.footer_div ul a:hover{
+    color: red;
+}
+
+a{
+    text-decoration: none;
+}
