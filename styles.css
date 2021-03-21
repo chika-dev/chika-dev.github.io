@@ -1,22 +1,35 @@
 body{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(35, 39, 53);
 }
 
 #navbar{
-    background-color: rgb(41, 37, 37);
+    background-color: rgb(49, 7, 53);
     text-align: end;
     position: fixed;
     width: 100%;
     top: 0;
 }
 
-.navbar-div ul li{
-    padding: 16px;
+.navbar-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     font-size: large;
 }
-.navbar-div ul li a{
-    padding-right: 40px;
+.navbar-div .nav-name {
+    display: inline-block;
+}
+.navbar-div .nav-name a {
+    text-decoration: none;
+    color: white;
+}
+.navbar-div ul li{
+    display: inline-block;
+}
+.navbar-div ul li a {
+    padding-right: 16px;
     color: white;
 }
 
@@ -26,7 +39,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(77, 64, 64);
+    background-color: rgb(114, 74, 114);
     color: white;
 }
 #welcome-section h1{
@@ -46,20 +59,35 @@ p{
 .project-divs {
     background-color: rgb(202, 181, 181);
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns:  repeat(3, 1fr);
     margin: 10px;
+    height: auto;
 }
 
 
 .link_divs{
     background-color: rgb(202, 181, 181);
-    padding-left: 16px;
     margin-top: 30px;
+    height: 300px;
+    padding: 0 16px;
+}
+.link_divs div {
+    height: 80%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.link_divs div  img{
+    height: 100%;
+    object-fit: cover;
 }
 .project-caption {
     text-align: center;
     color:  black;
     font-size: 1em;
+}
+.project-caption a {
+    text-decoration: none;
+    color: black;
 }
 a:hover{
     background-color: transparent;
@@ -76,9 +104,6 @@ a:hover{
     }
   }
 
-footer{
-    justify-content: center;
-}
 .footer_div{
     text-align: center;
     color: white;
@@ -95,4 +120,9 @@ footer{
 
 a{
     text-decoration: none;
+}
+
+#footer{
+    text-align: center;
+    color: white;
 }
